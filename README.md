@@ -157,18 +157,12 @@ First, a flowchart was generated which contains data input, cycles, functions, s
 
 ![](https://scontent.fbog4-2.fna.fbcdn.net/v/t1.6435-9/254972652_3035195720078471_8349072310618740594_n.jpg?_nc_cat=109&_nc_rgb565=1&ccb=1-5&_nc_sid=730e14&_nc_ohc=w-mJxWGRU_YAX_ZoUwZ&_nc_ht=scontent.fbog4-2.fna&oh=81ee698ddbb0f77f2739768c3d7891dc&oe=61AFE128)
 
-## Authors: Carlos Andrés Pardo Rodríguez,
+## Authors: Steward Valdez.
 
 ![](https://scontent.fbog4-2.fna.fbcdn.net/v/t1.6435-9/245379421_10224272841063912_624750551163182786_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ihxPoG9IdwwAX_saD7Z&_nc_ht=scontent.fbog4-2.fna&oh=1f41a32f9ef787fbe6b419f725f8c9c6&oe=61AFFD50)
 
-- Git: https://github.com/ANDRES3021
-- Twitter: https://twitter.com/CarlosA54648157
 
-## Authors: Juan Sebastian Avendaño Gonzalez.
+## Authors: René Sebastian Chavarro.
 
-![](https://scontent.fbog4-2.fna.fbcdn.net/v/t1.6435-9/218604429_2952928454971865_3872301864962653538_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=UgEJIjOa-t4AX-vxyRz&_nc_ht=scontent.fbog4-2.fna&oh=2d85437b6360007352107c47030c0c25&oe=61B00845)
-
-- Git: https://github.com/AvendanoisPepe
-- Twitter: https://twitter.com/Sebastian_Aven
 
 🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲![](https://raw.githubusercontent.com/jbocane6/logos/main/holberton-logo.png)🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲
