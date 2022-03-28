@@ -1,168 +1,160 @@
-![](https://mikata.shingaku.mynavi.jp/img/umi/6221/151228114825/1.jpg)
-# FORMATTING FORMAT --- 💥💥💥_printf💥💥💥
+<p align="center">
+  <img width="409" height="128" src="https://www.maizure.org/projects/printf/fig0.png">
+</p>
+
+# 0x11. C - printf
+
+Repository for **_printf()** function written as part of the **Low-level programming and Algorithm** project at **Holberton School**. This implementation produces an output according to a format.
 
 
-------------
+## Project overview
+
+### Compilation:
+
+All files will be compiled with gcc 4.8.4 using the flags:  -Wall -Werror -Wextra -pedantic
+
+    gcc -Wall -Werror -Wextra -pedantic *.c
+
+### Betty coding style:
+
+All files are written in C and follows the Betty coding style for Holberton School. For more detail, check this page:
+
+[Betty style documentation](https://github.com/holbertonschool/Betty/wiki)
+
+### Authorized functions and macros
+
+* write (man 2 write)
+* malloc (man 3 malloc)
+* free (man 3 free)
+* va_start (man 3 va_start)
+* va_end (man 3 va_end)
+* va_copy (man 3 va_copy)
+* va_arg (man 3 va_arg)
+* _putchar(char c)
+
+## Function prototypes
+
+All function prototypes used to compile _printf() are included in the header file **main.h**:
+*    int (*get_function(const char *format))(va_list);
+*    int _putchar(char c);
+*    int _printf(const char *format, ...);
+*    int print_s(va_list arg);
+*    int print_c(va_list arg);
+*    int print_pc(va_list arg);
+*    int print_d(va_list arg);
+*    int print_i(va_list arg);
+
+## File description
+
+* **_printf.c:** - contains the function _printf()
+* **_putchar.c:** - contains the function _putchar()
+* **man_3_printf:** - manual page for  _printf() function.
+* **structure.c** - contains the function get_func()
+* **structure_lists.c** - contains the functions print_char, print_str and print_pct for the case of printing character, string and '%', contains the function print_dec for the case of printing decimal and integer
+* **main.h** - contains all headers, prototypes and structure declaration
+
+## Function description
+
+**int _printf(const char \*format, ...)**
+
+This function produces output under the control of a *format string* that specifies how subsequent arguments (or arguments accessed via the variable-length argument of stdarg(3)) are converted for output.
+
+The **format string** is composed of zero or more directives:
+1. Ordinary characters that are copied unchanged to the output stream. (except %)
+2. Conversion specifications, each of which results in fetching zero or more subsequent arguments. Each conversion specification starts with the character %, ends with a conversion specifier ( which is a letter).
 
 
-The _printf() function that you will see in this repository is mainly based on the original printf(), which has the objective of printing a message on the screen, which is composed of a special format that serves to include different types of strings in the resultant of the same.
-
-------------
+The **conversion specifier:**
 
 
------------
+The conversion specifier is a letter that specifies the type of conversion to be applied. Our program includes the following conversion   specifiers:
 
-   ## What does _printf(); do?
+**d, i:**	  The int are a argument in decimal notation. This return the
+                decimal number, calculed the length of the digit and after
+                print digit for digit and return the complex num, and writing this
+                in the console.
 
-------------
+**c:**      The char character, its print when in the variable get alone a
+                character, this character are print in console in the assigment
+                position.
 
-It does the job of printing a string in which the characters are printed as they are in the string output, but when it encounters a %* (which indicates that it is a formatting mark)*, this special character "%" denotes which method should be used or implemented to convert the parameter used along with the formatting mark and replace it with the parameters that correspond to its position in the function.
+**s:**      The char string, get the string and print all characters into,
+                Characters from the array are written up to (but not including)
+                a terminating null byte ('\0').
 
-Example of `_printf();`
-
-        int main()
-		{
-			int len;
-			
-			_printf("Length:[%d, %i]\n", len, len);
-		}
-
-------------
-
+**%:**	    A '%' is written.  No argument is converted.  The complete
+                conversion specification is '%%'.
 
 
-------------
+**Return value:**
 
-## How to format with _printf()?
+Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
 
-------------
+If you put the % and after of this the program see a space of a null byte ('\0'), the program return (-1).
+___
 
+**int (\*get_func(const char \*format))(va_list)**
 
-Depending on the modulator or the mark of the format our function compares the parameters entered in it with a previously predefined structure in which if it finds a match it sends the data to the personal function of that modulator so that it prints the corresponding %d, %i, %c or %s;
+This function called by *_printf()* and checks for valid conversion specifier when it finds a '%' character. The *get_func function will check for the right conversion specifier. Upon valid specifier, it returns the corresponding function.
+___
 
-|  Modulators | Return ();  |
-| ------------ | ------------ |
-|  %d  | Signed decimal conversion of an integer  |
-|  $i |  Signed decimal conversion of an integer |
-|  %c | Prints the corresponding ASCII character  |
-|  %s | Character string (ending in '\0')  |
-|  %% |  Prints the % symbol |
+**int print_c(va_list arg)**
 
-------------
+This function gets a variadic argument and prints each character of char type.
+___
 
+**int print_s(va_list arg)**
 
-------------
+This function gets a variadic argument, traverse the string, and prints a character at a time. 
+___
 
+**int print_pc(va_list arg)**
 
+This function prints a per cent sign '%'.
+___
 
-# Examples of use:
+**int print_i(va_list arg);**
+This function prints a per cent sign '%'.
+___
 
-------------
+**int print_d(va_list arg)**
+This function prints a per cent sign '%'.
+___
 
+**int _putchar(char c)**
 
-To access the examples we will show how to use the repository locally.
-
-- To clone the repository use this link: https://github.com/Stewardvr93/printf.git
-- To compile the code in your console (local Terminal) or in your sandbox, access the local location of the repository and use this command: **gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf**
-- Type in your console** ./_printf**, it will display all the required cases in the main.c since you will be executing the code.
-
-------------
-### File main.c:
-    #include <limits.h>
-    #include <stdio.h>
-    #include "main.h"
-    
-    /**
-     * main - Entry point
-     *
-     * Return: Always 0
-     */
-    int main(void)
-    {
-    	int len;
-    	int len2;
-    	unsigned int ui;
-    	void *addr;
-    
-    	len = _printf("Let's try to printf a simple sentence.\n");
-    	len2 = printf("Let's try to printf a simple sentence.\n");
-    	_printf("Length:[%d, %i]\n", len, len);
-    	printf("Length:[%d, %i]\n", len2, len2);
-    	_printf("Negative:[%d]\n", -762534);
-    	printf("Negative:[%d]\n", -762534);
-    	_printf("Character:[%c]\n", 'H');
-    	printf("Character:[%c]\n", 'H');
-    	_printf("String:[%s]\n", "I am a string !");
-    	printf("String:[%s]\n", "I am a string !");
-    	len = _printf("Percent:[%%]\n");
-    	len2 = printf("Percent:[%%]\n");
-    	_printf("Len:[%d]\n", len);
-    	printf("Len:[%d]\n", len2);
-    
-    	return (0);
-    }
-    
-
-------------
+writes the character c to standard output
+___
 
 
-### Execution of the main.c file:
+## Examples
 
-```c
-Let's try to printf a simple sentence.
-Let's try to printf a simple sentence.
-Length:[39, 39]
-Length:[39, 39]
-Negative:[-762534]
-Negative:[-762534]
-Character:[H]
-Character:[H]
-String:[I am a string !]
-String:[I am a string !]
-Percent:[%]
-Percent:[%]
-Len:[12]
-Len:[12]
-```
+        To print a character:
 
-------------
+           #include "main.h"
 
+           _printf("%c",
+                   'S');
 
-------------
+        To print a string:
 
-## Files *.c
+           #include "main.h"
 
+           char string[] = "Hello World!;
 
+           _printf("%s",
+                   string);
 
-A brief description of our .c files
+        To print a integrer or double:
 
-| File name.  | Description |
-| ------------ | ------------ |
-| _prinf.c  |  We check the "%" to see if they are followed, alone and send them to their respective function and if not simply save the character that is of such a position.  |
-|  _putchar.c | Tiene la función **_putchar() **que imprime un carácter.  |
-| get_op_func.c  |  It contains the function **(* get_op_func) **which selects the correct operation to perform based on the formatting flags. |
-|  main.c |  Contains the test cases (comparison between our **_printf()** function with the** printf()** function of the library). |
-| print_num.c  | It contains the function **printfd()** with which we verify if it prints positive or negative numbers.   |
-| printf_caracters.c  | It contains the printfc() function which allows you to print an output character. Contains the printfs() function which prints an output string.  |
+           #include "main.h"
 
+           int day = 24, moth = 3, year = 2022;
 
-------------
+           _printf("The date is %i/%d/%i", day, moth, year);
 
+## Authors
+[Edwin Gaviria Cardenas](https://github.com/Edwin-0396) | [@egc4611](https://twitter.com/EGC4611)
 
-------------
+[Leonardo Cumaco](https://github.com/Coderlancce) | [@Coderlancce](https://twitter.com/Coderlancce)
 
-## Flowchart:
-
-First, a flowchart was generated which contains data input, cycles, functions, structures and with which the logic was based to generate the source code of our function.
-
-![](https://scontent.fbog4-2.fna.fbcdn.net/v/t1.6435-9/254972652_3035195720078471_8349072310618740594_n.jpg?_nc_cat=109&_nc_rgb565=1&ccb=1-5&_nc_sid=730e14&_nc_ohc=w-mJxWGRU_YAX_ZoUwZ&_nc_ht=scontent.fbog4-2.fna&oh=81ee698ddbb0f77f2739768c3d7891dc&oe=61AFE128)
-
-## Authors: Steward Valdez.
-
-![](https://scontent.fbog4-2.fna.fbcdn.net/v/t1.6435-9/245379421_10224272841063912_624750551163182786_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=ihxPoG9IdwwAX_saD7Z&_nc_ht=scontent.fbog4-2.fna&oh=1f41a32f9ef787fbe6b419f725f8c9c6&oe=61AFFD50)
-
-
-## Authors: René Sebastian Chavarro.
-
-
-🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲![](https://raw.githubusercontent.com/jbocane6/logos/main/holberton-logo.png)🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲🥲
