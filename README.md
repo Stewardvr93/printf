@@ -62,7 +62,7 @@ Depending on the modulator or the mark of the format our function compares the p
 
 To access the examples we will show how to use the repository locally.
 
-- To clone the repository use this link: https://github.com/AvendanoisPepe/printf.git
+- To clone the repository use this link: https://github.com/Stewardvr93/printf.git
 - To compile the code in your console (local Terminal) or in your sandbox, access the local location of the repository and use this command: **gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o _printf**
 - Type in your console** ./_printf**, it will display all the required cases in the main.c since you will be executing the code.
 
