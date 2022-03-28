@@ -1,0 +1,86 @@
+_printf() - Leonardo and Edwin manual page
+
+NAME:
+        _printf.
+
+SYNOPSIS:
+
+        #nclude "main.h"
+
+        int _printf(const char *format, ...);
+
+DESCRIPTION:
+
+        The functions in the _printf() family produce output according to
+        a format as described below.
+
+        This function write a string how first argument into "" and after
+        call a variadic functions of get for print with the caracter type
+        for print correctly the info in the variable how an output.
+
+    Flag characters:
+        The character % is followed by zero or more of the following
+        flags:
+
+                None added now, soon its actived flags.
+
+    Conversion specifiers:
+         A character that specifies the type of conversion to be appiled.
+         The conversion specifiers and their meanings are:
+
+        d, i    The int are a argument in decimal notation. This return the
+                decimal number, calculed the length of the digit and after
+                print digit for digit and return the complex num, and writing this
+                in the console.
+
+        c       The char character, its print when in the variable get alone a
+                character, this character are print in console in the assigment
+                position.
+
+        s       The char string, get the string and print all characters into,
+                Characters from the array are written up to (but not including)
+                a terminating null byte ('\0').
+
+        %       A '%' is written.  No argument is converted.  The complete
+                conversion specification is '%%'.
+
+RETURN VALUE:
+
+        Upon successful return, these functions return the number of
+        characters printed (excluding the null byte used to end output to
+        strings).
+
+        If you put the % and after of this the program see a space of a null
+        byte ('\0'), the program return (-1).
+
+EXAMPLES:
+
+        To print a character:
+
+           #include "main.h"
+
+           _printf("%c",
+                   'S');
+
+        To print a string:
+
+           #include "main.h"
+
+           char string[] = "Hello World!;
+
+           _printf("%s",
+                   string);
+
+        To print a integrer or double:
+
+           #include "main.h"
+
+           int day = 24, moth = 3, year = 2022;
+
+           _printf("The date is %i/%d/%i",
+                                day, moth, year);
+
+SEE ALSO:
+
+        printf(1), asprintf(3), puts(3), scanf(3), setlocale(3),
+        strfromd(3), wcrtomb(3), wprintf(3), locale(5)
