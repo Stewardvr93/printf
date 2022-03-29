@@ -16,7 +16,7 @@ int print_b(va_list arg)
 
 	d[0] = va_arg(arg, int);
 
-	if(d[0] == 1)
+	if (d[0] == 1)
 	{
 		store = store + _putchar(1 + '0');
 		v++;
