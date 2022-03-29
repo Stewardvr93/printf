@@ -3,7 +3,6 @@
 /**
  * _printf -write in console
  * @format: string
- *
  * Return: 0
  */
 
